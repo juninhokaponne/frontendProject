@@ -71,7 +71,6 @@ export const updateUser =
         }
       );
 
-      console.log("response -> ", response.data);
       dispatch({ type: "UPDATE_USER_SUCCESS", payload: response.data });
     } catch (error: any) {
       console.error(error);

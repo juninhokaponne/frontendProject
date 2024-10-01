@@ -73,7 +73,6 @@ export const SidebarComponent = ({
         <MenuItem
           icon={<FaRegUser />}
           onClick={() => {
-            console.log("Changing content to users");
             setActiveContent("users");
           }}
         >
@@ -82,7 +81,6 @@ export const SidebarComponent = ({
         <MenuItem
           icon={<BiCameraMovie />}
           onClick={() => {
-            console.log("Changing content to movies");
             setActiveContent("movies");
           }}
         >
@@ -91,7 +89,6 @@ export const SidebarComponent = ({
         <MenuItem
           icon={<CgProfile />}
           onClick={() => {
-            console.log("Changing content to profile");
             setActiveContent("profile");
           }}
         >
