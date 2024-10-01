@@ -81,7 +81,7 @@ export const deleteUser = (id: any) => async (dispatch: any) => {
   try {
     await axios.delete(`http://localhost:3001/api/users/${id}`, {
       headers: {
-        Authorization: `Bearer ${localStorage.getItem("token")}`,
+        Authorization: token,
       },
     });
     dispatch({ type: "DELETE_USER_SUCCESS", payload: id });

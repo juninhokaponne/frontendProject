@@ -38,8 +38,6 @@ export const ModalProfile: React.FC<ModalProfileProps> = ({
         updateUser(id, { profileDetails: data }) as any
       );
 
-      console.log("response", response);
-
       if (response && response.statusCode == 200 && !toast.isActive(idToast)) {
         showToast(
           idToast,

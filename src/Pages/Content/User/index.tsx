@@ -80,7 +80,6 @@ export const UsersContent: React.FC = () => {
   const paginate = (pageNumber: number) => setCurrentPage(pageNumber);
 
   const handleEdit = (user: User) => {
-    console.log("user -> ", user);
     setSelectedUser(user);
     setEditedName(user.name);
     setEditedEmail(user.email);
