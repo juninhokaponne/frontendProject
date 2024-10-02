@@ -1,11 +1,14 @@
 import axios from "axios";
+const prodURL = import.meta.env.VITE_PROD_URL;
 
 const token = `Bearer ${localStorage.getItem("token")}`;
+const baseUrl = prodURL || "http://localhost:3001";
+console.log("base ", baseUrl);
 
 export const createUser =
   (name: string, email: string, password: string) => async (dispatch: any) => {
     try {
-      const response = await axios.post("http://localhost:3001/api/users", {
+      const response = await axios.post(`${baseUrl}/api/users`, {
         name,
         email,
         password,
@@ -19,7 +22,7 @@ export const createUser =
 export const loginUser =
   (email: string, password: string) => async (dispatch: any) => {
     try {
-      const response = await axios.post("http://localhost:3001/api/login", {
+      const response = await axios.post(`${baseUrl}/api/login`, {
         email,
         password,
       });
@@ -32,7 +35,7 @@ export const loginUser =
 export const fetchUsers = () => async (dispatch: any) => {
   dispatch({ type: "FETCH_USERS_REQUEST" });
   try {
-    const response = await axios.get("http://localhost:3001/api/users", {
+    const response = await axios.get(`${baseUrl}/api/users`, {
       headers: {
         Authorization: token,
       },
@@ -46,7 +49,7 @@ export const fetchUsers = () => async (dispatch: any) => {
 
 export const fetchUserDetails = (id: string) => async () => {
   try {
-    const response = await axios.get(`http://localhost:3001/api/users/${id}`, {
+    const response = await axios.get(`${baseUrl}/api/users/${id}`, {
       headers: {
         Authorization: token,
       },
@@ -61,15 +64,11 @@ export const fetchUserDetails = (id: string) => async () => {
 export const updateUser =
   (id: string, userData?: any) => async (dispatch: any) => {
     try {
-      const response = await axios.put(
-        `http://localhost:3001/api/users/${id}`,
-        userData,
-        {
-          headers: {
-            Authorization: token,
-          },
-        }
-      );
+      const response = await axios.put(`${baseUrl}/api/users/${id}`, userData, {
+        headers: {
+          Authorization: token,
+        },
+      });
 
       dispatch({ type: "UPDATE_USER_SUCCESS", payload: response.data });
     } catch (error: any) {
@@ -79,7 +78,7 @@ export const updateUser =
 
 export const deleteUser = (id: any) => async (dispatch: any) => {
   try {
-    await axios.delete(`http://localhost:3001/api/users/${id}`, {
+    await axios.delete(`${baseUrl}/api/users/${id}`, {
       headers: {
         Authorization: token,
       },
@@ -92,7 +91,7 @@ export const deleteUser = (id: any) => async (dispatch: any) => {
 
 export const fetchAllMovies = () => async (dispatch: any) => {
   try {
-    const response = await axios.get("http://localhost:3001/api/films", {
+    const response = await axios.get(`${baseUrl}/api/films`, {
       headers: {
         Authorization: token,
       },
