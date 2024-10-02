@@ -44,7 +44,7 @@ export const fetchUsers = () => async (dispatch: any) => {
   }
 };
 
-export const fetchUserDetails = (id: string) => async (dispatch: any) => {
+export const fetchUserDetails = (id: string) => async () => {
   try {
     const response = await axios.get(`http://localhost:3001/api/users/${id}`, {
       headers: {

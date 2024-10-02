@@ -44,7 +44,6 @@ interface User {
 
 export const UsersContent: React.FC = () => {
   const [loading, setLoading] = useState(false);
-  const [warnigModal, setWarningModal] = useState(false);
   const [users, setUsers] = useState<User[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(5);

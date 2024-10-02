@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { fetchAllMovies } from "../../../redux/actions/userActions";
 import { useDispatch } from "react-redux";
 import animationData from "../../../assets/lotties/loading.json";
@@ -71,7 +71,6 @@ const MovieList = () => {
         setError(err.message);
       } finally {
         setLoading(false);
-        clearInterval(fetchInterval);
       }
     };
 

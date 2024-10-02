@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import * as Styled from "./style";
+import { useEffect, useState } from "react";
 import {
   TbLayoutSidebarRightCollapseFilled,
   TbLayoutSidebarLeftCollapseFilled,

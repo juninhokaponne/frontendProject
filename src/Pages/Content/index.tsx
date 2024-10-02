@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import * as Styled from "./style";
 import Lottie from "react-lottie";
 import animationData from "../../assets/lotties/building.json";
