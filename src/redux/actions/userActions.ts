@@ -3,7 +3,6 @@ const prodURL = import.meta.env.VITE_PROD_URL;
 
 const token = `Bearer ${localStorage.getItem("token")}`;
 const baseUrl = prodURL || "http://localhost:3001";
-console.log("base ", baseUrl);
 
 export const createUser =
   (name: string, email: string, password: string) => async (dispatch: any) => {
